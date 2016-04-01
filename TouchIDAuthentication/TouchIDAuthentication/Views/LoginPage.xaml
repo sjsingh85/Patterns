@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TouchIDAuthentication.Views.LoginPage">
+	<ContentPage.Content>
+		<StackLayout Spacing="10" Orientation="Vertical" Padding="20,80,20,20">
+			<Entry Text="{Binding UserLoginId}" IsVisible="{Binding IsSetupOnDeviceRequired}" Placeholder="Enter Username" />
+			<Button Text="Setup Credentials on Device" IsVisible="{Binding IsSetupOnDeviceRequired}" Command="{Binding SetupOnDeviceCommand}" FontSize="24" />
+			<Button Text="Trigger TouchID" IsVisible="{Binding UserCanTriggerAuthentication}" Command="{Binding TriggerAuthCommand}" FontSize="24" />
+			<Label Text="{Binding Message}" />
+			<Label Text="{Binding LoggedInId}" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
